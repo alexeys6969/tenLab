@@ -1,0 +1,174 @@
+﻿<Page x:Class="tenLabPractice.Pages.authPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:tenLabPractice.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1024" d:DesignWidth="1440"
+      Title="authPage"
+      Background="#202020"
+      FontFamily="Fonts\Inter_28pt-Medium.ttf">
+
+    <Grid>
+        <Grid Background="#1E1E1E"
+          ClipToBounds="True">
+
+            <Viewbox Stretch="Uniform">
+                <Canvas Width="1440"
+                    Height="900">
+
+                    <!-- Верхний левый большой круг -->
+                    <Ellipse Width="560"
+                         Height="420"
+                         Canvas.Left="-110"
+                         Canvas.Top="-110"
+                         Fill="#292929"
+                         Opacity="0.75">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform Angle="-25"
+                                         CenterX="280"
+                                         CenterY="210"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+
+                    <!-- Верхний центральный круг -->
+                    <Ellipse Width="470"
+                         Height="470"
+                         Canvas.Left="230"
+                         Canvas.Top="-180"
+                         Fill="#2A2A2A"
+                         Opacity="0.72">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform Angle="15"
+                                         CenterX="235"
+                                         CenterY="235"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+
+                    <!-- Верхний правый круг -->
+                    <Ellipse Width="560"
+                         Height="390"
+                         Canvas.Left="1020"
+                         Canvas.Top="-120"
+                         Fill="#292929"
+                         Opacity="0.75">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform Angle="8"
+                                         CenterX="280"
+                                         CenterY="195"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+
+                    <!-- Большой центральный диагональный эллипс -->
+                    <Ellipse Width="850"
+                         Height="300"
+                         Canvas.Left="250"
+                         Canvas.Top="170"
+                         Fill="#292929"
+                         Opacity="0.65">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform Angle="35"
+                                         CenterX="425"
+                                         CenterY="150"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+
+                    <!-- Левый средний -->
+                    <Ellipse Width="560"
+                         Height="400"
+                         Canvas.Left="-260"
+                         Canvas.Top="220"
+                         Fill="#292929"
+                         Opacity="0.7">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform Angle="25"
+                                         CenterX="280"
+                                         CenterY="200"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+
+                    <!-- Правый средний -->
+                    <Ellipse Width="600"
+                         Height="430"
+                         Canvas.Left="1030"
+                         Canvas.Top="190"
+                         Fill="#292929"
+                         Opacity="0.72">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform Angle="-20"
+                                         CenterX="300"
+                                         CenterY="215"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+
+                    <!-- Нижний левый -->
+                    <Ellipse Width="650"
+                         Height="280"
+                         Canvas.Left="100"
+                         Canvas.Top="710"
+                         Fill="#292929"
+                         Opacity="0.72">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform Angle="-10"
+                                         CenterX="325"
+                                         CenterY="140"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+
+                    <!-- Нижний правый -->
+                    <Ellipse Width="700"
+                         Height="300"
+                         Canvas.Left="850"
+                         Canvas.Top="690"
+                         Fill="#292929"
+                         Opacity="0.65">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform Angle="12"
+                                         CenterX="350"
+                                         CenterY="150"/>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+                </Canvas>
+            </Viewbox>
+        </Grid>
+
+        <StackPanel HorizontalAlignment="Center" Margin="100,0,100,0">
+            <StackPanel.Effect>
+                <DropShadowEffect Color="#000" Direction="270" ShadowDepth="5" Opacity="0.25" BlurRadius="4"/>
+            </StackPanel.Effect>
+            <Image Source="/Images/tenLabLogo.png" Width="264" Height="76" Margin="0,88,0,0"/>
+
+            <TextBlock Text="Добро пожаловать!" Style="{StaticResource MainTB}" HorizontalAlignment="Center" Margin="0,80,0,0"/>
+            <TextBlock Text="Войдите в свой аккаунт ТенЛаб" HorizontalAlignment="Center" Style="{StaticResource MainText}" Margin="0,3,0,0"/>
+            <Border Width="1240" Height="453" Background="#FFF" Margin="0,57,0,0" CornerRadius="20">
+                <StackPanel>
+                    <TextBlock Text="Email:" HorizontalAlignment="Left" Foreground="#666666" Style="{StaticResource MainText}" Margin="50,50,0,0"/>
+                    <TextBox Text="Email:" x:Name="userEmail" HorizontalAlignment="Stretch" Foreground="#666666" Style="{StaticResource TextBoxStyle}" Margin="50,10,50,0"/>
+
+                    <TextBlock Text="Email:" HorizontalAlignment="Left" Foreground="#666666" Style="{StaticResource MainText}" Margin="50,30,0,0"/>
+                    <PasswordBox x:Name="userPassword" Password="*********" HorizontalAlignment="Stretch" Foreground="#666666" Style="{StaticResource PasswordBoxStyle}" Margin="50,10,50,0"/>
+
+                    <CheckBox x:Name="rememberMeCB" HorizontalAlignment="Left" Style="{StaticResource CheckBoxStyle}" Content="Запомнить меня" Margin="50,10,0,0"/>
+
+                    <Button HorizontalAlignment="Stretch" Style="{StaticResource ButtonStyle}" Height="51" Content="Войти" Margin="50,30,50,0"/>
+
+                    <Button HorizontalAlignment="Left" Margin="50,5,0,0" Background="Transparent" BorderThickness="0">
+                        <TextBlock Text="Забыли пароль?" TextDecorations="Underline" Foreground="#2867F2" Style="{StaticResource MainText}"/>
+                    </Button>
+                </StackPanel>
+            </Border>
+            
+            <TextBlock Text="Корпоративная система Тенлаб" HorizontalAlignment="Center" Foreground="#FFF" Style="{StaticResource MainText}" Margin="0,44,0,0"/>
+            <TextBlock Text="© 2026 Тенлаб" HorizontalAlignment="Center" Foreground="#FFF" Style="{StaticResource MainText}" Margin="0"/>
+        </StackPanel>
+    </Grid>
+</Page>
