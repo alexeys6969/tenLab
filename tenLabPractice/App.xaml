@@ -252,6 +252,15 @@
                                 Value="#666666"/>
 
                             </Trigger>
+                            <!-- Нажатие -->
+                            <Trigger Property="IsPressed"
+                             Value="True">
+
+                                <Setter TargetName="Border"
+                                Property="Background"
+                                Value="#4A7BBA"/>
+
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
 

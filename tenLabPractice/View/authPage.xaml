@@ -154,7 +154,7 @@
                     <TextBlock Text="Email:" HorizontalAlignment="Left" Foreground="#666666" Style="{StaticResource MainText}" Margin="50,50,0,0"/>
                     <TextBox Text="Email:" x:Name="userEmail" HorizontalAlignment="Stretch" Foreground="#666666" Style="{StaticResource TextBoxStyle}" Margin="50,10,50,0"/>
 
-                    <TextBlock Text="Email:" HorizontalAlignment="Left" Foreground="#666666" Style="{StaticResource MainText}" Margin="50,30,0,0"/>
+                    <TextBlock Text="Пароль:" HorizontalAlignment="Left" Foreground="#666666" Style="{StaticResource MainText}" Margin="50,30,0,0"/>
                     <PasswordBox x:Name="userPassword" Password="*********" HorizontalAlignment="Stretch" Foreground="#666666" Style="{StaticResource PasswordBoxStyle}" Margin="50,10,50,0"/>
 
                     <CheckBox x:Name="rememberMeCB" HorizontalAlignment="Left" Style="{StaticResource CheckBoxStyle}" Content="Запомнить меня" Margin="50,10,0,0"/>

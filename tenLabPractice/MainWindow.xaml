@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tenLabPractice"
         mc:Ignorable="d"
-        Title="Система учета оборудования" Height="1024" Width="1440" MinHeight="450" MinWidth="800">
+        Title="Система учета оборудования" Height="1024" Width="1460" MinHeight="1024" MinWidth="1460">
     <Frame x:Name="frame" NavigationUIVisibility="Hidden"/>
 </Window>

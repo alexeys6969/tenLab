@@ -12,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using tenLabPractice.Pages;
 
-namespace tenLabPractice
+namespace tenLabPractice.Items
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для serviceItem.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class serviceItem : UserControl
     {
-        public static MainWindow init { get; set; }
-        public MainWindow()
+        public serviceItem()
         {
             InitializeComponent();
-            init = this;
-            frame.Navigate(new mainReport());
         }
     }
 }
