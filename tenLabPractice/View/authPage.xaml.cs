@@ -24,5 +24,10 @@ namespace tenLabPractice.Pages
         {
             InitializeComponent();
         }
+
+        private void Authorization(object sender, RoutedEventArgs e)
+        {
+            MainWindow.init.frame.Navigate(new mainReport());
+        }
     }
 }

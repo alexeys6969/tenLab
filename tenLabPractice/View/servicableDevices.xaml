@@ -1,0 +1,46 @@
+﻿<Page x:Class="tenLabPractice.View.servicableDevices"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:tenLabPractice.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="servicableDevices"
+      Background="#202020">
+
+    <Grid>
+        <!-- Общий ScrollViewer на случай маленьких экранов -->
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Margin="50,0,50,40">
+
+                <StackPanel x:Name="headerParent" Margin="0,15,0,0" HorizontalAlignment="Stretch"/>
+                <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,45,40,0">
+                    <TextBlock Text="Обслуживаемые устройства" x:Name="devFreeCount" Style="{StaticResource MainText}" FontSize="18" FontWeight="SemiBold"/>
+                    <StackPanel>
+                        <!-- Точно так же разносим элементы через вертикальный Margin у Grid -->
+                        <Grid Margin="0,12,0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="devName" Text="Устройство" Style="{StaticResource MainText}" FontSize="14" Grid.Column="0" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="reason" Text="Причина" HorizontalAlignment="Center" Style="{StaticResource MainText}" FontSize="14" Grid.Column="1" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="status" Text="Статус" HorizontalAlignment="Center" Style="{StaticResource MainText}" FontSize="14" Grid.Column="2" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="date" HorizontalAlignment="Right" Text="Дата выдачи" Style="{StaticResource MainText}" FontSize="14" Grid.Column="3" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <!-- Линия-разделитель -->
+                        <Border Background="#515151" Height="1.5" Opacity="0.7"/>
+                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                            <StackPanel x:Name="serviceParent" HorizontalAlignment="Stretch"/>
+                        </ScrollViewer>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

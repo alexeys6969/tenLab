@@ -119,7 +119,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Items\useItem.xaml.cs">
+      <DependentUpon>useItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\servicableDevices.xaml.cs">
+      <DependentUpon>servicableDevices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\serviceRequestPage.xaml.cs">
+      <DependentUpon>serviceRequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\usableDevices.xaml.cs">
+      <DependentUpon>usableDevices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\usageRequestPage.xaml.cs">
+      <DependentUpon>usageRequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\createServiceReuqest.xaml.cs">
+      <DependentUpon>createServiceReuqest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\createUsageRequest.xaml.cs">
+      <DependentUpon>createUsageRequest.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Items\headerItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Items\serviceItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Items\useItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +159,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Items\headerItem.xaml.cs">
+      <DependentUpon>headerItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Items\serviceItem.xaml.cs">
       <DependentUpon>serviceItem.xaml</DependentUpon>
@@ -143,6 +175,30 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\mainReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\servicableDevices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\serviceRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\usableDevices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\usageRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\createServiceReuqest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\createUsageRequest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -236,7 +292,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Windows\" />
+    <Resource Include="Images\calendar_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\tenLabLogo.png" />

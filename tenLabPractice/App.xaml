@@ -7,24 +7,24 @@
         <Style TargetType="TextBlock" x:Key="MainTB">
             <Setter Property="FontFamily" Value="Fonts/Inter_28pt-Medium.ttf"/>
             <Setter Property="Foreground" Value="#FFF"/>
-            <Setter Property="FontSize" Value="64"/>
+            <Setter Property="FontSize" Value="32"/>
         </Style>
         
         <Style TargetType="TextBlock" x:Key="MainText">
             <Setter Property="FontFamily" Value="Fonts\Inter_24pt-Regular.ttf"/>
             <Setter Property="Foreground" Value="#FFF"/>
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="12"/>
         </Style>
 
         <Style TargetType="TextBox" x:Key="TextBoxStyle">
             <Setter Property="FontFamily" Value="Fonts\Inter_24pt-Regular.ttf"/>
             <Setter Property="Foreground" Value="#666666"/>
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="Background" Value="#FFF"/>
             <Setter Property="BorderBrush" Value="#D5DCE8"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="Padding" Value="15,11,0,11"/>
+            <Setter Property="Padding" Value="5,5,0,5"/>
 
             <Setter Property="Template">
                 <Setter.Value>
@@ -55,13 +55,13 @@
         <Style TargetType="PasswordBox" x:Key="PasswordBoxStyle">
             <Setter Property="FontFamily" Value="Fonts\Inter_24pt-Regular.ttf"/>
             <Setter Property="Foreground" Value="#666666"/>
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="Background" Value="#FFF"/>
             <Setter Property="BorderBrush" Value="#D5DCE8"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="Padding" Value="15,11,0,11"/>
+            <Setter Property="Padding" Value="5,5,0,5"/>
 
             <Setter Property="Template">
                 <Setter.Value>
@@ -97,7 +97,7 @@
             Value="Fonts/Inter_24pt-Regular.ttf"/>
 
             <Setter Property="FontSize"
-            Value="24"/>
+            Value="12"/>
 
             <Setter Property="Foreground"
             Value="#666666"/>
@@ -126,14 +126,14 @@
 
                             <!-- Квадратик -->
                             <Border x:Name="CheckBorder"
-                            Width="20"
-                            Height="20"
+                            Width="10"
+                            Height="10"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="5">
+                            CornerRadius="2.5">
 
                                 <!-- Галочка -->
                                 <Path x:Name="CheckMark"
@@ -149,7 +149,7 @@
 
                             <!-- Текст -->
                             <ContentPresenter
-                        Margin="30,0,0,0"
+                        Margin="15,0,0,0"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Left"
                         Content="{TemplateBinding Content}"
@@ -218,7 +218,7 @@
 
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="FontFamily" Value="Fonts\Inter_24pt-Regular.ttf"/>
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="Foreground" Value="#FFF"/>
             <Setter Property="Background" Value="#202020"/>
             <Setter Property="Template">
@@ -227,10 +227,10 @@
                     <ControlTemplate TargetType="{x:Type Button}">
 
                         <Border x:Name="Border"
-                            Background="{TemplateBinding Background}"
+                            Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="10"
+                            CornerRadius="5"
                             SnapsToDevicePixels="True">
                             <ContentPresenter
                         HorizontalAlignment="Center"
@@ -264,6 +264,166 @@
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
 
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="NavigationButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="Fonts\Inter_24pt-Regular.ttf"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#FFF"/>
+            <!-- Важно: используем обычный TemplateBinding, он идеально дружит с C# -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <!-- Наведение: меняем фон САМОЙ кнопки, а не Бордера -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#666666"/>
+                            </Trigger>
+                            <!-- Нажатие: меняем фон САМОЙ кнопки -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#4A7BBA"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomComboBox" TargetType="ComboBox">
+            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#515151"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="12,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <!-- Основная рамка -->
+                            <Border x:Name="Border" 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="6"/>
+
+                            <!-- Разметка: Текст слева, стрелочка справа -->
+                            <Grid Margin="{TemplateBinding Padding}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ContentPresenter Grid.Column="0" 
+                                              IsHitTestVisible="False" 
+                                              Content="{TemplateBinding SelectionBoxItem}" 
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" 
+                                              ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                              VerticalAlignment="Center"/>
+
+                                <!-- Кастомная стрелочка вниз (шеврон) -->
+                                <Path Grid.Column="1" 
+                                  Data="M 0 0 L 4 4 L 8 0" 
+                                  Stroke="#FFF" 
+                                  StrokeThickness="1.5" 
+                                  VerticalAlignment="Center" 
+                                  Margin="5,0,0,0"/>
+                            </Grid>
+
+
+                            <!-- Выпадающий список элементов -->
+                            <Popup x:Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                <Border x:Name="DropDownBorder" Background="#333333" BorderBrush="#515151" BorderThickness="1" CornerRadius="6" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <ScrollViewer CanContentScroll="True">
+                                        <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomDatePicker" TargetType="DatePicker">
+            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#515151"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DatePicker}">
+                        <Grid x:Name="DatePickerRoot">
+                            <!-- Основной закругленный контейнер поля -->
+                            <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="6"/>
+
+                            <Grid Margin="12,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <DatePickerTextBox x:Name="PART_TextBox" 
+                   Grid.Column="0" 
+                   Background="Transparent" 
+                   BorderThickness="0" 
+                   FocusVisualStyle="{x:Null}"
+                   Foreground="#515151"
+                   VerticalContentAlignment="Center"
+                   Focusable="{TemplateBinding Focusable}">
+                                    <DatePickerTextBox.Template>
+                                        <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                            <!-- Элемент PART_ContentHost выводит чистый текст БЕЗ каких-либо обводок и эффектов -->
+                                            <ScrollViewer x:Name="PART_ContentHost" 
+                          Background="Transparent"
+                          BorderThickness="0"
+                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                        </ControlTemplate>
+                                    </DatePickerTextBox.Template>
+                                </DatePickerTextBox>
+
+                                <!-- Кнопка вызова календаря (обязательный системный элемент PART_Button) -->
+                                <Button x:Name="PART_Button" Grid.Column="1" VerticalAlignment="Center" Cursor="Hand">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Image Source="/Images/calendar_icon.png" 
+                                           Width="16" 
+                                           Height="16" 
+                                           Stretch="Uniform"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </Grid>
+
+                            <!-- Всплывающий календарь (исправлен: удалено ошибочное свойство Actions) -->
+                            <Popup x:Name="PART_Popup" 
+                           Placement="Bottom" 
+                           AllowsTransparency="True" 
+                           StaysOpen="False" 
+                           IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+                                <Calendar x:Name="PART_Calendar" 
+                                  DisplayDate="{Binding DisplayDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                  SelectedDate="{Binding SelectedDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>

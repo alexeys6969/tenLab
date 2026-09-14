@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace tenLabPractice.Items
+namespace tenLabPractice.Window
 {
     /// <summary>
-    /// Логика взаимодействия для serviceItem.xaml
+    /// Логика взаимодействия для createServiceReuqest.xaml
     /// </summary>
-    public partial class serviceItem : UserControl
+    public partial class createServiceReuqest : System.Windows.Window
     {
-        public serviceItem(bool fullRequest)
+        public createServiceReuqest()
         {
             InitializeComponent();
-            if(!fullRequest)
-            {
-                date.Visibility = Visibility.Collapsed;
-                grid.ColumnDefinitions[3].Width = new GridLength(0);
-            }     
         }
     }
 }

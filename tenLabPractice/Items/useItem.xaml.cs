@@ -16,18 +16,20 @@ using System.Windows.Shapes;
 namespace tenLabPractice.Items
 {
     /// <summary>
-    /// Логика взаимодействия для serviceItem.xaml
+    /// Логика взаимодействия для useItem.xaml
     /// </summary>
-    public partial class serviceItem : UserControl
+    public partial class useItem : UserControl
     {
-        public serviceItem(bool fullRequest)
+        public useItem(bool fullRequest)
         {
             InitializeComponent();
-            if(!fullRequest)
+            if (!fullRequest)
             {
-                date.Visibility = Visibility.Collapsed;
-                grid.ColumnDefinitions[3].Width = new GridLength(0);
-            }     
+                employee.Visibility = Visibility.Collapsed;
+                dateFrom.Visibility = Visibility.Collapsed;
+                grid.ColumnDefinitions[1].Width = new GridLength(0);
+                grid.ColumnDefinitions[4].Width = new GridLength(0);
+            }
         }
     }
 }
