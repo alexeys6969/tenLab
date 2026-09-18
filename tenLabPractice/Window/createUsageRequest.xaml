@@ -11,7 +11,6 @@
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
     <Grid Background="#333333">
-        <!-- Ограничиваем размеры карточки по центру экрана -->
         <Border Background="#333333"  
             CornerRadius="12" 
             HorizontalAlignment="Center" 
@@ -19,25 +18,15 @@
             Padding="30,25,30,25">
 
             <StackPanel>
-                <!-- Заголовок окна -->
                 <TextBlock Text="Создание заявки на использование" Style="{StaticResource MainText}" FontSize="16"/>
 
-                <!-- Блок выбора устройства -->
                 <TextBlock Text="Выберите устройство:" Style="{StaticResource MainText}" Margin="0,5,0,0"/>
-                <ComboBox Style="{StaticResource CustomComboBox}" Text="Выберите..." Margin="0,5,0,0">
-                    <!-- Ниже примеры элементов, которые будут внутри -->
-                    <ComboBoxItem Content="VR-шлем Meta Quest 3"/>
-                    <ComboBoxItem Content="Ноутбук ASUS ROG"/>
-                    <ComboBoxItem Content="Графический планшет Wacom"/>
-                </ComboBox>
+                <ComboBox Style="{StaticResource CustomComboBox}" Text="Выберите..." Margin="0,5,0,0"/>
 
-                <!-- Блок указания дат -->
                 <TextBlock Text="Укажите даты" Style="{StaticResource MainText}" Margin="0,15,0,0"/>
 
-                <!-- Поле: Беру -->
                 <DatePicker Style="{StaticResource CustomDatePicker}" Margin="0,0,0,8">
                     <DatePicker.Resources>
-                        <!-- Перезаписываем текст-подсказку (Watermark) внутри DatePicker на ваш -->
                         <Style TargetType="DatePickerTextBox">
                             <Setter Property="Text" Value="Беру"/>
                             <Setter Property="Foreground" Value="#333333"/>
@@ -46,7 +35,6 @@
                     </DatePicker.Resources>
                 </DatePicker>
 
-                <!-- Поле: Верну -->
                 <DatePicker Style="{StaticResource CustomDatePicker}" Margin="0,0,0,20">
                     <DatePicker.Resources>
                         <Style TargetType="DatePickerTextBox">
@@ -57,7 +45,6 @@
                     </DatePicker.Resources>
                 </DatePicker>
 
-                <!-- Финальная кнопка отправки -->
                 <Button Content="Отправить заявку" Style="{StaticResource ButtonStyle}" Background="#4A7BBA" Height="25" BorderThickness="0"/>
             </StackPanel>
         </Border>

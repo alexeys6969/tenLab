@@ -7,7 +7,6 @@
              mc:Ignorable="d" 
              Margin="0,0,0,0">
     <StackPanel>
-        <!-- Точно так же разносим элементы через вертикальный Margin у Grid -->
         <Grid Margin="0,12,0,12" x:Name="grid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -24,7 +23,6 @@
             <TextBlock x:Name="dateFrom" HorizontalAlignment="Right" Text="11.09.26" Style="{StaticResource MainText}" FontSize="14" Grid.Column="4" VerticalAlignment="Center"/>
         </Grid>
 
-        <!-- Линия-разделитель -->
         <Border Background="#515151" Height="1.5" Opacity="0.7"/>
     </StackPanel>
 </UserControl>

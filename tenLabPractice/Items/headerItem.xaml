@@ -8,17 +8,12 @@
     <Grid HorizontalAlignment="Stretch" Margin="0,15,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <!-- Для Логотипа -->
             <ColumnDefinition Width="*"/>
-            <!-- Для Кнопок меню (займет всё свободное место) -->
             <ColumnDefinition Width="Auto"/>
-            <!-- Для Профиля строго справа -->
         </Grid.ColumnDefinitions>
 
-        <!-- 1. Логотип (Колонка 0) -->
         <Image Grid.Column="0" Source="/Images/tenLabLogo.png" Width="110" Height="32" VerticalAlignment="Center"/>
 
-        <!-- 2. Скролл-контейнер с кнопками (Колонка 1) -->
         <ScrollViewer Grid.Column="1" Margin="25,0,25,0" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" VerticalAlignment="Center"
               PreviewMouseDown="ScrollViewer_PreviewMouseDown"
               PreviewMouseMove="ScrollViewer_PreviewMouseMove"
@@ -26,7 +21,6 @@
               Cursor="Hand"
               x:Name="menuContainer">
             <StackPanel Orientation="Horizontal">
-                <!-- Увеличили высоту до 32 и FontSize до 12 для лучшей читаемости -->
                 <Button x:Name="Report" Click="ReportClick" Content="Отчет" BorderThickness="0" Background="#4A7BBA" Width="100" Height="32" FontSize="12" Style="{StaticResource NavigationButtonStyle}"/>
                 <Button x:Name="Usage" Click="UsageClick" Content="Заявка на использование" BorderThickness="0" Background="#333333" Width="170" Height="32" FontSize="12" Style="{StaticResource NavigationButtonStyle}" Margin="8,0,0,0"/>
                 <Button x:Name="Service" Click="ServiceClick" Content="Заявка на обслуживание" BorderThickness="0" Background="#333333" Width="170" Height="32" FontSize="12" Style="{StaticResource NavigationButtonStyle}" Margin="8,0,0,0"/>
@@ -35,7 +29,6 @@
             </StackPanel>
         </ScrollViewer>
 
-        <!-- 3. Кнопка профиля (Колонка 2 - строго справа) -->
         <Button Grid.Column="2" Width="42" Height="42" HorizontalAlignment="Right" VerticalAlignment="Center">
             <Button.Template>
                 <ControlTemplate TargetType="Button">

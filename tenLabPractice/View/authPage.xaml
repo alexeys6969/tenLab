@@ -13,33 +13,23 @@
 
     <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
 
-        <!-- Задаем минимальную высоту Grid, чтобы в маленьком окне элементы не слипались меньше этой нормы -->
         <Grid Background="#1E1E1E" MinHeight="550">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
-                <!-- Пружина сверху -->
                 <RowDefinition Height="Auto"/>
-                <!-- Логотип и заголовки -->
                 <RowDefinition Height="0.5*"/>
-                <!-- Пружина между заголовком и формой -->
                 <RowDefinition Height="Auto"/>
-                <!-- Форма -->
                 <RowDefinition Height="1*"/>
-                <!-- Пружина между формой и футером -->
                 <RowDefinition Height="Auto"/>
-                <!-- Футер -->
                 <RowDefinition Height="0.5*"/>
-                <!-- Пружина снизу -->
             </Grid.RowDefinitions>
 
-            <!-- Блок 1: Логотип и приветствие -->
             <StackPanel Grid.Row="1" Margin="50,0,50,0">
                 <Image Source="/Images/tenLabLogo.png" Width="150" Height="43" HorizontalAlignment="Center"/>
                 <TextBlock Text="Добро пожаловать" Style="{StaticResource MainTB}" HorizontalAlignment="Center" Margin="0,15,0,0"/>
                 <TextBlock Text="Войдите в свой аккаунт Тенлаб" Style="{StaticResource MainText}" HorizontalAlignment="Center" Margin="0,5,0,0"/>
             </StackPanel>
 
-            <!-- Блок 2: Форма (Сохраняем растяжение по ширине через Margin="50,0") -->
             <Border Grid.Row="3" Background="#FFF" CornerRadius="20" Margin="50,0,50,0" Padding="0,10,0,15">
                 <StackPanel>
                     <TextBlock Text="Email:" Style="{StaticResource MainText}" HorizontalAlignment="Left" Foreground="#666666" Margin="25,15,0,0"/>

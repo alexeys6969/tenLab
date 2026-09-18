@@ -10,34 +10,27 @@
       Background="#202020">
 
     <Grid>
-        <!-- Общий ScrollViewer на случай маленьких экранов -->
         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Margin="50,0,50,40">
 
-                <!-- Контейнер для нашего переделанного адаптивного хедера -->
                 <StackPanel x:Name="headerParent" Margin="0,15,0,0" HorizontalAlignment="Stretch"/>
 
-                <!-- Блок с карточками устройств -->
                 <Grid Margin="0,45,0,0" HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <!-- Левая карточка (Увеличили шрифты и высоту кнопки) -->
                     <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,40,0">
                         <TextBlock Text="Всего заявок на обслуживание: " x:Name="devServiceCount" Style="{StaticResource MainText}" FontSize="18" FontWeight="SemiBold"/>
                         <TextBlock Text="Из них: " x:Name="devServiceList" Style="{StaticResource MainText}" FontSize="14" Foreground="#FFFFFF" Margin="0,6,0,0"/>
                         <Button Content="Создать заявку на обслуживание" Click="CreateServiceRequest" Style="{StaticResource ButtonStyle}" Background="#333333" BorderThickness="0" Height="38" FontSize="13" Margin="0,15,0,0" HorizontalAlignment="Stretch"/>
                     </StackPanel>
 
-                    <!-- Правая карточка (Для симметрии, если появится контент) -->
                     <StackPanel Grid.Column="1" HorizontalAlignment="Stretch" Margin="40,0,0,0">
-                        <!-- Сюда встанет блок 'Устройств в обслуживании', как на макете -->
                     </StackPanel>
                 </Grid>
 
-                <!-- Блок нижних заявок -->
                 <StackPanel Margin="0,40,0,0">
                     <TextBlock Text="Последние заявки:" Style="{StaticResource MainText}" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
                     <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,10">

@@ -15,19 +15,15 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Название устройства сделали чуть крупнее и выразительнее -->
             <TextBlock x:Name="devName" Text="VR-шлем Meta Quest 3" Style="{StaticResource MainText}" FontSize="14" Grid.Column="0" VerticalAlignment="Center"/>
 
-            <!-- Увеличили шрифт описания проблемы -->
             <TextBlock x:Name="reason" HorizontalAlignment="Center" Text="Не работает контроллер" Style="{StaticResource MainText}" FontSize="14" Grid.Column="1" VerticalAlignment="Center"/>
             
             <TextBlock x:Name="status" HorizontalAlignment="Center" Text="В работе" Style="{StaticResource MainText}" FontSize="14" Grid.Column="2" VerticalAlignment="Center"/>
 
-            <!-- Статус сделали крупнее -->
             <TextBlock x:Name="date" HorizontalAlignment="Right" Text="10.09.26" Style="{StaticResource MainText}" FontSize="14" Grid.Column="3" VerticalAlignment="Center"/>
         </Grid>
 
-        <!-- Сделали разделяющую линию чуть толще и добавили прозрачности для аккуратности -->
         <Border Grid.ColumnSpan="3" Background="#515151" Height="1.5" Opacity="0.7"/>
     </StackPanel>
 </UserControl>

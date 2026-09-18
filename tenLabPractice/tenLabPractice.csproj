@@ -122,6 +122,11 @@
     <Compile Include="Items\useItem.xaml.cs">
       <DependentUpon>useItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Device.cs" />
+    <Compile Include="Model\ServicedDevice.cs" />
+    <Compile Include="Model\UsedDevice.cs" />
+    <Compile Include="Model\Users.cs" />
     <Compile Include="View\servicableDevices.xaml.cs">
       <DependentUpon>servicableDevices.xaml</DependentUpon>
     </Compile>
